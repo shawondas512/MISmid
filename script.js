@@ -1,7 +1,8 @@
+
 function unlockDiscount() {
-    alert("Surprise! You unlocked a 10% discount on your next booking. Use code: TRAVEL2026 at checkout.");
+    alert("Welcome to Wanderer! Use code FRESHSTART at checkout for 15% off your first booking.");
 }
 
 function sendInquiry() {
-    alert("Thank you! Your travel inquiry has been sent securely. Our team will contact you within 24 hours.");
+    alert("Message received! A travel expert will be in touch with you shortly.");
 }
