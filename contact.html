@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderer | Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: var(--brand-dark);">
+    <header>
+        <div class="logo">Wander<span>er</span></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Destinations</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact" style="color: var(--white); min-height: 75vh;">
+        <h2 class="section-header" style="color: var(--white);">Ready to Book?</h2>
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #a3b18a;">Leave your details below and we will craft the perfect itinerary for your next getaway.</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 15px;">
+                <input type="text" placeholder="Full Name" style="padding: 15px; border-radius: 8px; border: none; font-size: 1rem;">
+                <input type="email" placeholder="Email Address" style="padding: 15px; border-radius: 8px; border: none; font-size: 1rem;">
+                <textarea placeholder="Tell us where you want to go..." rows="4" style="padding: 15px; border-radius: 8px; border: none; font-size: 1rem;"></textarea>
+                <button class="btn" onclick="sendInquiry()" style="margin-top: 0; border-radius: 8px;">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Wanderer Travel Agency. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
