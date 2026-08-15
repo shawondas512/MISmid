@@ -1,95 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wanderer | One Page Experience</title>
-    <link rel="stylesheet" href="style.css">
+<title>Country Finder</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Wander<span>er</span></div>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">Why Us</a></li>
-                <li><a href="#destinations">Destinations</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <h2>Find Your Next Horizon</h2>
-        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Bespoke travel experiences curated for those who seek adventure, comfort, and the unforgettable.</p>
-        <button class="btn" onclick="unlockDiscount()">Claim Your Travel Credit</button>
-    </section>
+<div class="blob blob1"></div>
+<div class="blob blob2"></div>
+<div class="blob blob3"></div>
 
-    <section id="about">
-        <h2 class="section-header">The Wanderer Difference</h2>
-        <div class="flex-container">
-            <div class="flex-card">
-                <h3 style="color: var(--brand-dark); margin-bottom: 1rem;">Seamless Planning</h3>
-                <p style="color: var(--text-muted); line-height: 1.6;">We handle the logistics—flights, hotels, and transfers—so you can focus entirely on enjoying your trip.</p>
-            </div>
-            <div class="flex-card">
-                <h3 style="color: var(--brand-dark); margin-bottom: 1rem;">Local Experts</h3>
-                <p style="color: var(--text-muted); line-height: 1.6;">Our certified guides provide deep cultural context, taking you off the beaten path to authentic locations.</p>
-            </div>
-            <div class="flex-card">
-                <h3 style="color: var(--brand-dark); margin-bottom: 1rem;">24/7 Support</h3>
-                <p style="color: var(--text-muted); line-height: 1.6;">No matter what time zone you are in, our dedicated team is always available to assist you during your travels.</p>
-            </div>
-        </div>
-    </section>
+<div class="navbar">
+  <h1>🌍 Country Finder</h1>
+  <span>Country &amp; Weather Explorer</span>
+</div>
 
-    <section id="destinations">
-        <h2 class="section-header">Trending Destinations</h2>
-        <div class="grid-container">
-            <div class="grid-card">
-                <span class="price-tag">$2,400</span>
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="Paris">
-                <div class="card-details">
-                    <h3 style="color: var(--brand-dark);">Paris, France</h3>
-                    <p style="color: var(--text-muted); margin-top: 0.5rem;">7 Days • Flight + Hotel Included</p>
-                </div>
-            </div>
-            <div class="grid-card">
-                <span class="price-tag">$3,100</span>
-                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80" alt="Dubai">
-                <div class="card-details">
-                    <h3 style="color: var(--brand-dark);">Dubai, UAE</h3>
-                    <p style="color: var(--text-muted); margin-top: 0.5rem;">5 Days • Desert Safari + Luxury Suite</p>
-                </div>
-            </div>
-            <div class="grid-card">
-                <span class="price-tag">$1,850</span>
-                <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali">
-                <div class="card-details">
-                    <h3 style="color: var(--brand-dark);">Bali, Indonesia</h3>
-                    <p style="color: var(--text-muted); margin-top: 0.5rem;">10 Days • Private Villa + Spa Package</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="search-box">
+  <h2>Explore the <span>World</span></h2>
+  <p>Search any country to see its details and live weather</p>
 
-    <section id="contact" style="background-color: var(--brand-dark); color: var(--white);">
-        <h2 class="section-header" style="color: var(--white);">Ready to Book?</h2>
-        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
-            <p style="margin-bottom: 2rem; font-size: 1.1rem; color: #a3b18a;">Leave your details below and we will craft the perfect itinerary for your next getaway.</p>
-            
-            <div style="display: flex; flex-direction: column; gap: 15px;">
-                <input type="text" placeholder="Full Name" style="padding: 15px; border-radius: 8px; border: none;">
-                <input type="email" placeholder="Email Address" style="padding: 15px; border-radius: 8px; border: none;">
-                <button class="btn" onclick="sendInquiry()" style="margin-top: 0; border-radius: 8px;">Send Message</button>
-            </div>
-        </div>
-    </section>
+  <div class="search-wrap">
+    <input type="text" id="countryInput" placeholder="Enter country name">
+    <button id="searchBtn">Search</button>
+  </div>
 
-    <footer>
-        <p>&copy; 2026 Wanderer Travel Agency. All rights reserved.</p>
-    </footer>
+  <div class="examples">
+    <button class="example-btn" onclick="quickSearch('Japan')">Japan</button>
+    <button class="example-btn" onclick="quickSearch('Italy')">Italy</button>
+    <button class="example-btn" onclick="quickSearch('Canada')">Canada</button>
+    <button class="example-btn" onclick="quickSearch('Bangladesh')">Bangladesh</button>
+  </div>
+</div>
 
-    <script src="script.js"></script>
+<div id="status"></div>
+
+<div id="results"></div>
+
+<div class="overlay" id="overlay">
+  <div id="weatherBox">
+    <h3 id="weatherTitle"></h3>
+    <div id="weatherIcon"></div>
+    <div id="weatherTemp"></div>
+    <div id="weatherExtra"></div>
+    <div id="weatherCodeLine"></div>
+    <button id="closeBtn">Close</button>
+  </div>
+</div>
+
+<div class="footer">
+  Country Finder Project 2026 &nbsp;|&nbsp;
+  Data from <a href="https://restcountries.com" target="_blank">REST Countries</a> and
+  <a href="https://open-meteo.com" target="_blank">Open-Meteo</a>
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
